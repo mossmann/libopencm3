@@ -2,7 +2,6 @@
  * This file is part of the libopencm3 project.
  *
  * Copyright (C) 2010 Uwe Hermann <uwe@hermann-uwe.de>
- * Copyright (C) 2012 Benjamin Vernoux <titanmkd@gmail.com>
  *
  * This library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -23,13 +22,11 @@
 /* Define memory regions. */
 MEMORY
 {
-  /* Physical address in Flash used to copy Code from Flash to RAM */
-  rom_flash (rx)  : ORIGIN = 0x80000000, LENGTH =  1M
   /* rom is really the shadow region that points to SPI flash or elsewhere */
   rom (rx)  : ORIGIN = 0x00000000, LENGTH =  1M
-  ram (rwx) : ORIGIN = 0x10000000, LENGTH =  128K
-  /* there are some additional RAM regions for data */
-  ram_data (rw) : ORIGIN = 0x10080000, LENGTH =  72K
+  ram_local1 (rwx) : ORIGIN = 0x10000000, LENGTH =  128K
+  ram_local2 (rwx) : ORIGIN = 0x10080000, LENGTH =  72K
+  /* there are some additional RAM regions */
 }
 
 /* Include the common ld script. */

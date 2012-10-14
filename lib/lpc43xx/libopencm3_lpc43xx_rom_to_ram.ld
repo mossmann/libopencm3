@@ -66,6 +66,7 @@ SECTIONS
 
 	.bss : {
 		. = _edata;
+		_bss = .;
 		*(.bss*)	/* Read-write zero initialized data */
 		*(COMMON)
 		. = ALIGN(4);
