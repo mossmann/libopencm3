@@ -39,7 +39,7 @@ CFLAGS		= -O2 -g3 \
 ARFLAGS		= rcs
 
 # LPC43xx common files for M4 / M0
-OBJ_LPC43XX     = gpio.o scu.o i2c.o ssp.o uart.o timer.o wwdt.o
+OBJ_LPC43XX     = gpio.o scu.o i2c.o ssp.o uart.o timer.o wwdt.o dac.o adc.o
 
 #LPC43xx M4 specific file + Generic LPC43xx M4/M0 files
 OBJS		= $(OBJ_LPC43XX) ipc.o

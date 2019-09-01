@@ -773,6 +773,15 @@ typedef enum {
 			 SCU_CONF_EZI_EN_IN_BUFFER | \
 			 SCU_CONF_ZIF_DIS_IN_GLITCH_FILT)
 
+/* definitions for ENAIO */
+
+#define SCU_ENAIO_ADCx_0 (1<<0)
+#define SCU_ENAIO_ADCx_1 (1<<1)
+#define SCU_ENAIO_ADCx_2 (1<<2)
+#define SCU_ENAIO_ADCx_3 (1<<3)
+#define SCU_ENAIO_ADCx_4 (1<<4)
+#define SCU_ENAIO_ADCx_5 (1<<5)
+#define SCU_ENAIO_ADCx_6 (1<<6)
 BEGIN_DECLS
 
 void scu_pinmux(scu_grp_pin_t group_pin, uint32_t scu_conf);

@@ -112,6 +112,43 @@ extern "C" {
 #define ADC0_STAT                       ADC_STAT(ADC0)
 #define ADC1_STAT                       ADC_STAT(ADC1)
 
+
+/* ADC_CR Values ----------------------------------------------------------- */
+
+#define ADC_CR_CH0 (1<<0)
+#define ADC_CR_CH1 (1<<1)
+#define ADC_CR_CH2 (1<<2)
+#define ADC_CR_CH3 (1<<3)
+#define ADC_CR_CH4 (1<<4)
+#define ADC_CR_CH5 (1<<5)
+#define ADC_CR_CH6 (1<<6)
+#define ADC_CR_CH7 (1<<7)
+
+#define ADC_CR_CLKDIV(x) ((x&0xff)<<8)
+#define ADC_CR_BURST (1<<16)
+
+#define ADC_CR_10BITS (0<<17)
+#define ADC_CR_9BITS  (1<<17)
+#define ADC_CR_8BITS  (2<<17)
+#define ADC_CR_7BITS  (3<<17)
+#define ADC_CR_6BITS  (4<<17)
+#define ADC_CR_5BITS  (5<<17)
+#define ADC_CR_4BITS  (6<<17)
+#define ADC_CR_3BITS  (7<<17)
+
+#define ADC_CR_POWER (1<<21)
+
+#define ADC_CR_START  (1<<24)
+/* missing: add other start modes */
+
+/* ADC_GDR and ADC_DR Values */
+#define ADC_DR_VREF(x)    ((x>>6)&0b1111111111)
+#define ADC_DR_CHN(x)     ((x>>24)&0b111)
+#define ADC_DR_OVERRUN(x) (((x&(1<<30))!=0))
+#define ADC_DR_DONE(x)    (((x&(1<<31))!=0))
+
+uint16_t adc_get_single(uint32_t adc, uint32_t flags);
+
 /**@}*/
 
 #ifdef __cplusplus
