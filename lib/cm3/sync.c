@@ -26,9 +26,7 @@ void __dmb()
 }
 
 /* Those are defined only on CM3 or CM4 */
-#if defined(__ARM_ARCH_6M__)
-#warning "sync not supported on ARMv6-M arch"
-#else
+#if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
 uint32_t __ldrex(volatile uint32_t *addr)
 {
