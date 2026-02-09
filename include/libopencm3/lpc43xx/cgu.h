@@ -34,7 +34,7 @@
  */
 
 #ifndef LPC43XX_CGU_H
-#define CGU_LPC43XX_CGU_H
+#define LPC43XX_CGU_H
 
 /**@{*/
 
