@@ -101,6 +101,8 @@ void spi_reset(uint32_t spi_peripheral)
 		break;
 #endif
 	}
+#else
+	(void) spi_peripheral;
 #endif
 }
 
